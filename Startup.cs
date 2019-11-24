@@ -7,6 +7,13 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+// ADD THESE DIRECTIVES
+using Microsoft.EntityFrameworkCore;
+// This directive comes from the DataAccess directory
+// that stores the Context or the database
+using Food_Enforcement.DataAccess;
+using Microsoft.EntityFrameworkCore.Infrastructure;
+
 
 namespace Food_Enforcement
 {
@@ -23,6 +30,11 @@ namespace Food_Enforcement
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews();
+
+            // Setup EF connection - modify the Conguration string
+            services.AddDbContext<ApplicationDBContext>(options => options.UseSqlServer(Configuration["Data:Food_Enforcement:ConnectionString"]));
+
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
