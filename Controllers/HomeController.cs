@@ -82,7 +82,7 @@ namespace Food_Enforcement.Controllers
             ViewBag.dbSuccessComp = 0;
             RootObject rootObject = GetRootObject();
 
-            return View();
+            return View(rootObject);
         }
 
         public IActionResult MainView()
@@ -91,7 +91,7 @@ namespace Food_Enforcement.Controllers
             //Food_Enforcement.APIHandlerManager.APIHandler webHandler = new Food_Enforcement.APIHandlerManager.APIHandler();
             RootObject rootObject = GetRootObject();
 
-            return View();
+            return View(rootObject);
 
         }
 
