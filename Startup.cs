@@ -7,6 +7,9 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc;
+
 // ADD THESE DIRECTIVES
 using Microsoft.EntityFrameworkCore;
 // This directive comes from the DataAccess directory
@@ -30,6 +33,16 @@ namespace Food_Enforcement
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews();
+            
+            services.Configure<CookiePolicyOptions>(options =>
+            {
+                // This lambda determines whether user consent for non-essential cookies is needed for a given request.
+                options.CheckConsentNeeded = context => true;
+                options.MinimumSameSitePolicy = SameSiteMode.None;
+            });
+
+
+            services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_3_0);
 
             // Setup EF connection - modify the Conguration string
             services.AddDbContext<ApplicationDBContext>(options => options.UseSqlServer(Configuration["Data:Food_Enforcement:ConnectionString"]));
