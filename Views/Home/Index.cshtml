@@ -5,7 +5,7 @@
 
 @model Food_Enforcement.Models.EF_Models.RootObject
 
-@{ 
+@{
     int classone = 0;
     int classtwo = 0;
     int classthree = 0;
@@ -34,6 +34,7 @@
 <html>
 <head>
     <style>
+
         #chartdiv {
             width: 100%;
             height: 500px;
@@ -103,11 +104,11 @@
 
     <div>
         <p>
-            The openFDA food enforcement reports API returns data from the FDA Recall Enterprise System (RES), a database that contains information on recall event information submitted to FDA. Currently, this data covers publicly releasable records from 2004-present. The data is updated weekly.
+            The openFDA food enforcement reports API returns data from the FDA Recall Enterprise System (RES), a database that contains information on recall event information submitted to FDA. Currently, this data covers publicly releasable records from 2004-present.
 
-            The procedures followed to input recall information into RES when FDA learns of a recall event are outlined in Chapter 7 of FDA’s Regulatory Procedure Manual The Regulatory Procedures Manual is a reference manual for FDA personnel. It provides FDA personnel with information on internal procedures to be used in processing domestic and import regulatory and enforcement matters.        <br />
+            The procedures followed to input recall information into RES when FDA learns of a recall event are outlined in Chapter 7 of FDA’s Regulatory Procedure Manual The Regulatory Procedures Manual is a reference manual for FDA personnel. It provides FDA personnel with information on internal procedures to be used in processing domestic and import regulatory and enforcement matters.
 
-            <br />
+            Below chart is fetched using the data from United States Department of Health and Human Services via their public <a href="https://open.fda.gov/apis/food/enforcement/" target="_blank">API</a>.
 
             <br />
         </p>
@@ -116,25 +117,19 @@
             Numerical designation (I, II, or III) that is assigned by FDA to a particular product recall that indicates the relative degree of health hazard. -
             <ul>
                 <li>
-                    <b>Class 2:Life-threatening situations</b>
-                    Products that might cause a temporary health problem, or pose only a slight threat of a serious nature. Example: a drug that is under-strength but that is not used to treat life-threatening situations.
-                    51% - 9749 records
+                    <b>Class I, a dangerous or defective product that predictably could cause serious health problems or death</b>
+                    Dangerous or defective products that predictably could cause serious health problems or death. Examples include: food found to contain botulinum toxin, food with undeclared allergens, a label mix-up on a lifesaving drug, or a defective artificial heart valve.
                 </li>
                 <li>
-                    <b>Class 2:Life-threatening situations</b>
+                    <b>Class II, meaning that the product might cause a temporary health problem, or pose only a slight threat of a serious nature</b>
                     Products that might cause a temporary health problem, or pose only a slight threat of a serious nature. Example: a drug that is under-strength but that is not used to treat life-threatening situations.
-                    51% - 9749 records
+
                 </li>
                 <li>
-                    <b>Class 2:Life-threatening situations</b>
-                    Products that might cause a temporary health problem, or pose only a slight threat of a serious nature. Example: a drug that is under-strength but that is not used to treat life-threatening situations.
-                    51% - 9749 records
+                    <b>Class III, a product that is unlikely to cause any adverse health reaction, but that violates FDA labeling or manufacturing laws.</b>
+                    Products that are unlikely to cause any adverse health reaction, but that violate FDA labeling or manufacturing laws. Examples include: a minor container defect and lack of English labeling in a retail food
                 </li>
-                <li>
-                    <b>Class 2:Life-threatening situations</b>
-                    Products that might cause a temporary health problem, or pose only a slight threat of a serious nature. Example: a drug that is under-strength but that is not used to treat life-threatening situations.
-                    51% - 9749 records
-                </li>
+
             </ul>
         </p>
     </div>

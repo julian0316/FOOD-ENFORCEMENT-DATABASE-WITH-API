@@ -9,20 +9,34 @@
         <h3>
             @Html.DisplayFor(modelItem => item.recalling_firm)
         </h3>
-        <div>
-            @Html.DisplayFor(modelItem => item.product_description)
-        </div>
+        <I>
+            <div>
+                <h5>
+                    Reason for recall:
+                    @Html.DisplayFor(modelItem => item.reason_for_recall)
+                </h5>
+            </div>
+            <div>
+                <h5>
 
-        <div>
-            <h5>Directions: </h5>
-            @Html.DisplayFor(modelItem => item.reason_for_recall)
-        </div>
-        <div>
-            <h5>Directions: </h5>
-            @Html.DisplayFor(modelItem => item.product_quantity)
-        </div>
+                    Product description:
+
+                    @Html.DisplayFor(modelItem => item.product_description)
+                </h5>
+            </div>
+
+
+            <div>
+                <h5>
+
+                    Product Quantity:
+
+                    @Html.DisplayFor(modelItem => item.product_quantity)
+                </h5>
+            </div>
+        </I>
     </div>
-    <br />
+
 }
 
 <script>
