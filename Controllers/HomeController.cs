@@ -59,11 +59,15 @@ namespace Food_Enforcement.Controllers
                     // JsonConvert is part of the NewtonSoft.Json Nuget package
                     rootObject = JsonConvert.DeserializeObject<RootObject>(foodData);
 
+                    dbContext.Meta.Add(rootObject.meta);
+                    dbContext.Results.Add(rootObject.meta.results);
+
                     foreach (Result result in rootObject.results)
                     {
                         dbContext.Result.Add(result);
                     }
-                    
+
+
                     dbContext.SaveChanges();
                     ViewBag.dbSuccessComp = 1;
                 }
