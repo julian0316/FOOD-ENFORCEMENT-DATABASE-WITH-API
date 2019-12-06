@@ -1,44 +1,89 @@
 ﻿@model Food_Enforcement.Models.EF_Models.RootObject
 
-<h1>Food Enforcement</h1>
-<hr />
-
-@foreach (var item in Model.results)
-{
-    <div>
-        <h3>
-            @Html.DisplayFor(modelItem => item.recalling_firm)
-        </h3>
-        <I>
-            <div>
-                <h5>
-                    Reason for recall:
-                    @Html.DisplayFor(modelItem => item.reason_for_recall)
-                </h5>
-            </div>
-            <div>
-                <h5>
-
-                    Product description:
-
-                    @Html.DisplayFor(modelItem => item.product_description)
-                </h5>
-            </div>
-
-
-            <div>
-                <h5>
-
-                    Product Quantity:
-
-                    @Html.DisplayFor(modelItem => item.product_quantity)
-                </h5>
-            </div>
-        </I>
-    </div>
-
+@{
+    Layout = "";
 }
+
+<!DOCTYPE HTML>
+
+<html>
+<head>
+    <section class="wrapper style3">
+        <title>Food Enforcement</title>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="stylesheet" href="~/css/main.css" />
+    </section>
+
+</head>
+<body class="landing">
+
+    <!-- Header -->
+    <header id="header" class="alt">
+        <h1><strong><a href="index.html">Food </a></strong> Enforcement</h1>
+        <nav id="nav">
+            <ul>
+                <li><a asp-area="" asp-controller="Home" asp-action="Index">Home</a></li>
+                <li><a asp-area="" asp-controller="Home" asp-action="MainView">Products List</a></li>
+                <li><a asp-area="" asp-controller="Home" asp-action="About">About Author</a></li>
+            </ul>
+        </nav>
+    </header>
+
+
+    <a href="#menu" class="navPanelToggle"><span class="fa fa-bars"></span></a>
+
+
+    <!-- One -->
+    @foreach (var item in Model.results)
+    {
+        <section id="one" class="table">
+            <div class="container 75%">
+                <div class="row 100%">
+                    <div class="6u 12u$(medium)">
+                        <header>
+                            <h3>@Html.DisplayFor(modelItem => item.recalling_firm)</h3>
+                            <!--<p>I</p>-->
+                        </header>
+                    </div>
+                    <div class="12u$ 12u$(small)">
+                        <h5>Reason for recall</h5>
+                        <p>@Html.DisplayFor(modelItem => item.reason_for_recall)</p>
+                        <h5>Product description</h5>
+                        <p>@Html.DisplayFor(modelItem => item.product_description)</p>
+                        <h5>Product Quantity</h5>
+                        <p>@Html.DisplayFor(modelItem => item.product_quantity)<p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    }
+    <!-- Two -->
+    <!-- Footer -->
+    <footer id="footer">
+        <div class="container">
+
+            <ul class="copyright">
+                <li>&copy; Alysson Silveira</li>
+
+            </ul>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/skel.min.js"></script>
+    <script src="assets/js/util.js"></script>
+    <script src="assets/js/main.js"></script>
+
+</body>
+</html>
+
+
+
+
 
 <script>
     alertDbSave(@ViewBag.dbSuccessComp);
 </script>
+

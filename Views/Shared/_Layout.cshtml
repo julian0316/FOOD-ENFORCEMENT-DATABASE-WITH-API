@@ -2,12 +2,14 @@
 <html>
 <head>
     <style>
+
         .header-shadow {
             background-image: url('../images/back.jpg');
             background-repeat: repeat-y; /* for vertical repeat */
             background-repeat: repeat-x; /* for horizontal repeat */
         }
     </style>
+
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"] - Food Enforcement</title>
@@ -15,6 +17,7 @@
     <environment include="Development">
         <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
         <link rel="stylesheet" href="~/css/site.css" />
+
     </environment>
     <environment exclude="Development">
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
@@ -24,7 +27,7 @@
 
     </environment>
 </head>
-<body class="header-shadow">
+<body>
     <nav class="navbar navbar-inverse navbar-fixed-top">
         <div class="container">
             <div class="navbar-header">
@@ -65,6 +68,7 @@
         <script src="~/lib/jquery/dist/jquery.js"></script>
         <script src="~/lib/bootstrap/dist/js/bootstrap.js"></script>
         <script src="~/js/site.js" asp-append-version="true"></script>
+
     </environment>
     <environment exclude="Development">
         <script src="https://ajax.aspnetcdn.com/ajax/jquery/jquery-3.3.1.min.js"
@@ -79,6 +83,7 @@
                 crossorigin="anonymous"
                 integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd">
         </script>
+
         <script src="~/js/site.min.js" asp-append-version="true"></script>
     </environment>
 

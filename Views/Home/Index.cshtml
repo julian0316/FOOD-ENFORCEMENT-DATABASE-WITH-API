@@ -3,6 +3,10 @@
 
 }
 
+@{
+    Layout = "";
+}
+
 @model Food_Enforcement.Models.EF_Models.RootObject
 
 @{
@@ -30,7 +34,8 @@
 }
 
 
-<!DOCTYPE html>
+<!DOCTYPE HTML>
+
 <html>
 <head>
     <style>
@@ -40,9 +45,10 @@
             height: 500px;
         }
     </style>
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta charset="utf-8">
+    <title>Food Enforcement</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="~/css/main.css" />
     <script src="https://www.amcharts.com/lib/4/core.js"></script>
     <script src="https://www.amcharts.com/lib/4/charts.js"></script>
     <script src="https://www.amcharts.com/lib/4/themes/animated.js"></script>
@@ -60,20 +66,17 @@
             chart.data = [
                 {
                     "term": "Class II",
-                    "count": @classtwo
+                    "count": @classone
                 },
                 {
                     "term": "Class I",
-                    "count": @classone
+                    "count": @classtwo
                 },
                 {
                     "term": "Class III",
                     "count": @classthree
                 },
-                /*{
-                    "term": "Not Yet Classified",
-                    "count": 400
-                }*/
+
             ];
 
             // Add and configure Series
@@ -91,47 +94,99 @@
 
         }); // end am4core.ready()
     </script>
-
-
 </head>
-<body>
-    <!-- HEADER -->
-    <header id="main-header">
+<body class="landing">
+
+    <!-- Header -->
+    <header id="header" class="alt">
+        <h1><strong><a href="index.html">Food </a></strong> Enforcement</h1>
+        <nav id="nav">
+            <ul>
+                <li><a asp-area="" asp-controller="Home" asp-action="Index">Home</a></li>
+                <li><a asp-area="" asp-controller="Home" asp-action="MainView">Products List</a></li>
+                <li><a asp-area="" asp-controller="Home" asp-action="About">About Author</a></li>
+            </ul>
+        </nav>
     </header>
 
-    <h2>Food Enforcement Overview</h2>
-    <hr />
+    <a href="#menu" class="navPanelToggle"><span class="fa fa-bars"></span></a>
 
-    <div>
-        <p>
-            The openFDA food enforcement reports API returns data from the FDA Recall Enterprise System (RES), a database that contains information on recall event information submitted to FDA. Currently, this data covers publicly releasable records from 2004-present.
-
-            The procedures followed to input recall information into RES when FDA learns of a recall event are outlined in Chapter 7 of FDA’s Regulatory Procedure Manual The Regulatory Procedures Manual is a reference manual for FDA personnel. It provides FDA personnel with information on internal procedures to be used in processing domestic and import regulatory and enforcement matters.
-
-            Below chart is fetched using the data from United States Department of Health and Human Services via their public <a href="https://open.fda.gov/apis/food/enforcement/" target="_blank">API</a>.
-
-            <br />
-        </p>
+    <!-- Banner -->
+    <section id="banner">
+        <h2>Products by Class</h2>
         <div id="chartdiv"></div>
-        <p>
-            Numerical designation (I, II, or III) that is assigned by FDA to a particular product recall that indicates the relative degree of health hazard. -
-            <ul>
-                <li>
-                    <b>Class I, a dangerous or defective product that predictably could cause serious health problems or death</b>
-                    Dangerous or defective products that predictably could cause serious health problems or death. Examples include: food found to contain botulinum toxin, food with undeclared allergens, a label mix-up on a lifesaving drug, or a defective artificial heart valve.
-                </li>
-                <li>
-                    <b>Class II, meaning that the product might cause a temporary health problem, or pose only a slight threat of a serious nature</b>
-                    Products that might cause a temporary health problem, or pose only a slight threat of a serious nature. Example: a drug that is under-strength but that is not used to treat life-threatening situations.
+        <ul class="actions">
+            <li><a href="generic.html" class="button special big">Food Enforcement</a></li>
+        </ul>
+    </section>
 
-                </li>
-                <li>
-                    <b>Class III, a product that is unlikely to cause any adverse health reaction, but that violates FDA labeling or manufacturing laws.</b>
-                    Products that are unlikely to cause any adverse health reaction, but that violate FDA labeling or manufacturing laws. Examples include: a minor container defect and lack of English labeling in a retail food
-                </li>
+    <!-- One -->
+    <section id="one" class="wrapper style1">
+        <div class="container 75%">
+            <div class="row 200%">
+                <div class="6u 12u$(medium)">
+                    <header class="major">
+                        <h2>Class I</h2>
+                        <!--<p>I</p>-->
+                    </header>
+                </div>
+                <div class="6u$ 12u$(medium)">
+                    <p>Products that might cause a temporary health problem, or pose only a slight threat of a serious nature. Example: a drug that is under-strength but that is not used to treat life-threatening situations.</p>
+
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="one" class="wrapper style2">
+        <div class="container 75%">
+            <div class="row 200%">
+                <div class="6u 12u$(medium)">
+                    <header class="major">
+                        <h2>Class II</h2>
+                       <!-- <p>II</p> -->
+                    </header>
+                </div>
+                <div class="6u$ 12u$(medium)">
+                    <p>Dangerous or defective products that predictably could cause serious health problems or death. Examples include: food found to contain botulinum toxin, food with undeclared allergens, a label mix-up on a lifesaving drug, or a defective artificial heart valve.</p>
+
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="one" class="wrapper style1">
+        <div class="container 75%">
+            <div class="row 200%">
+                <div class="6u 12u$(medium)">
+                    <header class="major">
+                        <h2>class III</h2>
+                        <!--<p>III</p>-->
+                    </header>
+                </div>
+                <div class="6u$ 12u$(medium)">
+                    <p>Products that are unlikely to cause any adverse health reaction, but that violate FDA labeling or manufacturing laws. Examples include: a minor container defect and lack of English labeling in a retail food.</p>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Two -->
+    <!-- Footer -->
+    <footer id="footer">
+        <div class="container">
+
+            <ul class="copyright">
+                <li>&copy; Group 5</li>
 
             </ul>
-        </p>
-    </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/skel.min.js"></script>
+    <script src="assets/js/util.js"></script>
+    <script src="assets/js/main.js"></script>
+
 </body>
 </html>
